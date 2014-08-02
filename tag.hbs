@@ -1,0 +1,42 @@
+
+
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! The big featured header on the homepage, with the site logo and description }}
+
+
+{{! The main content area on the homepage }}
+<main class="content" role="main">
+    
+    <h5 class="index-headline normal"><span>Article list for {{tag.name}}</span></h5>
+
+    <div class="cf frame">
+    {{#foreach posts}}
+        <article class="{{post_class}}" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+            <div class="article-item">
+                <header class="post-header">
+                    <h2 class="post-title" itemprop="name"><a href="{{url}}" itemprop="url">{{{title}}}</a></h2>
+                </header>
+                <section class="post-excerpt" itemprop="description">
+                    <p>{{excerpt characters="150"}}&hellip;</p>
+                </section>
+                <div class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="on "}}</div>
+            </div>
+        </article>
+    {{/foreach}}
+    </div>
+
+
+    {{!! After all the posts, we have the previous/next pagination links }}
+    {{pagination}}
+
+</main>
+
+<footer class="bottom-closer">
+    <div class="inner">
+        <a href="/" class="btn">Back to Overview</a>
+    </div>
+</footer>
