@@ -16,55 +16,6 @@
     font-style: normal;
 }
 
-/*@font-face {
-	font-family: icons;
-    font-weight: normal;
-    font-style: normal;
-    src: url("../fonts/icons.eot");
-    src: url("../fonts/icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons.woff") format("woff"), url("../fonts/icons.ttf") format("truetype"), url("../fonts/icons.svg#icons") format("svg");
-}*/
-
-/* Apply these base styles to all icons */
-/*
-.icon-ghost:before,
-.icon-feed:before,
-.icon-twitter:before,
-.icon-google-plus:before,
-.icon-facebook:before {
-	font-family: "icons";
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	text-decoration: none;
-}
-*/
-
-/* Each icon is created by inserting the corret character into the content of the :before pseudo element. Like a boss. */
-/*.icon-ghost:before {
-	content: "\e000";
-}
-
-.icon-feed:before {
-	content: "\e001";
-}
-
-.icon-twitter:before {
-	content: "\e002";
-	font-size: 1.1em;
-}
-
-.icon-google-plus:before {
-	content: "\e003";
-}
-
-.icon-facebook:before {
-	content: "\e004";
-}*/
-
 body {
 	font-family: Open Sans; /*, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif;*/
 	margin: 0;
@@ -83,6 +34,40 @@ body {
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     hyphens: auto;
+}
+
+a,
+a:visited,
+a:active {
+    color: #57AD68;
+    /*color: #000064;*/
+    text-decoration: none;
+    /*font-weight: bold;*/
+}
+
+.custom-links a,
+.custom-links a:visited,
+.custom-links a:active,
+.cf.frame h2 a,
+.cf.frame h2 a:visited,
+.cf.frame h2 a:active {
+    color: gray;
+}
+
+a:hover {
+    color: #347840;
+    /*color: #00F;*/
+}
+
+.custom-links a:hover,
+.cf.frame h2 a:hover {
+    color: black;
+}
+
+.subscribe {
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
 }
 
 .body-bg {
@@ -277,15 +262,6 @@ body {
 	color: #cccccc;
 }
 
-.blog-header .custom-links a {
-	text-decoration: none;
-	color: #999999;
-}
-
-.blog-header .custom-links a:hover {
-	color: #333333;
-}
-
 .content {
 	width: 70%;
 	max-width: 800px;
@@ -297,6 +273,7 @@ body {
 	box-shadow: 0px 4px 2px rgba(204, 204, 204, 0.8);
 	padding: 40px 40px 40px 40px;
     display: block;
+    position: relative;
 }
 
 .content article {
@@ -318,15 +295,6 @@ body {
 	margin: 0 0 20px 0;
 }
 
-.content article .post-title a {
-	text-decoration: none;
-	color: #333332;
-}
-
-.content article .post-title a:hover {
-	text-decoration: none;
-}
-
 .content article .post-excerpt {
 	letter-spacing: -0.02em;
 	font-weight: 300;
@@ -341,15 +309,6 @@ body {
 	color: #b3b3b1;
 	padding: 0 20px 0 20px;
 	line-height: 30px;
-}
-
-.content article .post-meta a {
-	color: #b3b3b1;
-	text-decoration: none;
-}
-
-.content article .post-meta a:hover {
-	text-decoration: underline;
 }
 
 .container.featured {
@@ -381,15 +340,6 @@ body {
 	font-size: 12px;
 }
 
-.pagination a {
-	color: #999999;
-	text-decoration: none;
-}
-
-.pagination a:hover {
-	color: #333333;
-}
-
 .post-reading {
 	position: absolute;
 	top: 10px;
@@ -419,15 +369,6 @@ body {
 	width: 70%;
 	max-width: 800px;
 	margin: 50px auto 50px auto;
-}
-
-.site-footer a {
-	color: #666666;
-	text-decoration: none;
-}
-
-.site-footer a:hover {
-	color: #333333;
 }
 
 .post .article-image {
@@ -503,28 +444,6 @@ body {
 	/*font-family: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif;*/
 	white-space: nowrap;
 	text-overflow: ellipsis;
-}
-
-.post .article-image .post-meta-text a {
-	color: rgba(255, 255, 255, 0.75);
-}
-
-.post .article-image .post-meta-text a:hover {
-	color: white;
-}
-
-.post .article-image .fa-angle-down {
-	font-size: 32px;
-	margin: 64px auto 0;
-	color: rgba(255, 255, 255, 0.75);
-}
-
-.post .article-image .fa-angle-down:hover {
-	color: white;
-}
-
-.post .article-image .topofpage {
-	text-decoration: underline;
 }
 
 .post .noarticleimage .post-meta {
@@ -627,11 +546,6 @@ body {
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
 	hyphens: auto;
-}
-
-.post .post-content a {
-	color: #333333;
-	text-decoration: underline;
 }
 
 .post .post-content img {
@@ -840,39 +754,13 @@ body {
 	color: #999999;
 }
 
-.post .bottom-teaser .isRight .site-footer a {
-	color: #333333;
-	text-decoration: none;
-}
-
-.post .bottom-teaser .isRight .site-footer a:hover {
-	text-decoration: underline;
-}
-
-.post .bottom-teaser .isRight .site-footer .poweredby {
-	display: block;
-	padding-bottom: 18px;
-	font-weight: 700;
-	color: #333333;
-}
-
 .share {
 	text-align: right;
 	padding: 20px 25px 0px 0px;
 }
 
 .share a {
-	text-decoration: none;
-	color: #bbbbbb;
 	padding-left: 12px;
-}
-
-.share a .hidden {
-	display: none;
-}
-
-.share a:hover {
-	color: #333333;
 }
 
 .bottom-closer {
@@ -1117,16 +1005,6 @@ body {
 	content: "\f1c1";
 }
 
-.page .post .post-content a,
-.page .post .post-content.publications a,
-.page .post .post-content.travel a,
-.page .post .post-content.resume a {
-	color: #57ad68; /*11ABB0*/
-	text-decoration: none;
-    font-weight: 500;
-}
-
-
 .post-content iframe {
     /* e.g. google maps */
 	border: none;
@@ -1215,7 +1093,6 @@ a {
 }
 
 .contact a {
-    color: #57ad68;
     font-weight: 700;
 }
 
