@@ -3,7 +3,7 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
-<main class="content" role="main">
+<main class="content post" role="main">
 
     <article class="{{post_class}}">
         
@@ -14,8 +14,8 @@
             <div class="post-meta">
                 <h1 class="post-title">{{{title}}}</h1>
                 <div class="cf post-meta-text">
-                    <div class="author-image" style="background-image: url({{author.image}})">Blog Logo</div>
-                    <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{author.name}}</h4> on
+                    <!--<div class="author-image" style="background-image: url({{author.image}})"></div>-->
+                    <!--<h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{author.name}}</h4> on-->
                     <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>
                     {{tags prefix=", tagged on " separator=", "}}
                 </div>

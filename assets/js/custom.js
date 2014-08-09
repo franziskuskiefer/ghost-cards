@@ -57,8 +57,15 @@ jQuery(document).ready(function($) {
 			window.location = "/"+link.replace(/%20/g, '-').toLowerCase();
 		});
     
-        /* adding lightbox http://www.lokeshdhakar.com/projects/lightbox2/ */
+        /* adding lightbox pages http://www.lokeshdhakar.com/projects/lightbox2/ */
         $(".content.page .post-content figure.image").each(function(){
+            var alt = $(this).children().eq(0).attr('alt');
+            var src = $(this).children().eq(0).attr('src');
+            $(this).wrap("<a href='"+src+"' data-lightbox='"+document.title+"' data-title='"+alt+"'></a>");
+        });
+    
+        /* adding lightbox to blog posts http://www.lokeshdhakar.com/projects/lightbox2/ */
+        $(".content.post .post-content figure.image").each(function(){
             var alt = $(this).children().eq(0).attr('alt');
             var src = $(this).children().eq(0).attr('src');
             $(this).wrap("<a href='"+src+"' data-lightbox='"+document.title+"' data-title='"+alt+"'></a>");
