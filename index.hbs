@@ -16,8 +16,8 @@
         <a href="https://twitter.com/_franziskus_" target="_blank"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;
         <a href="https://www.linkedin.com/profile/view?id=89648363" target="_blank"><i class="fa fa-linkedin"></i></a>&nbsp;&nbsp;·&nbsp;&nbsp;
         <a href="/publications/">Publications</a>&nbsp;&nbsp;·&nbsp;&nbsp;
-        <a href="/resume/">Resume</a>&nbsp;&nbsp;·&nbsp;&nbsp;
-        <a href="/travel/">Travel</a>
+        <a href="/resume/">Resume</a>
+        <!--&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/travel/">Travel</a>-->
     </div>
     
     <div class="about"></div>
@@ -53,9 +53,7 @@
     <h5 class="index-headline normal"><span>News & Blog</span></h5>
     
     <div class="cf frame">
-    {{#foreach posts}}
-        {{#if featured}}
-        {{else}}
+        {{#foreach posts}}
             <article class="{{post_class}}" itemscope itemtype="http://schema.org/BlogPosting" role="article">
                 <div class="article-item">
                     <header class="post-header">
@@ -67,8 +65,10 @@
                     <div class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> <span class="post-tags-set">{{tags prefix="on "}}</span></div>
                 </div>
             </article>
-        {{/if}}
-    {{/foreach}}
+        {{/foreach}}
+        <div class="extra-pagination inner">
+            {{pagination}}
+        </div>
     </div>
 
 
