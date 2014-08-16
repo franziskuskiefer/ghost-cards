@@ -7,48 +7,29 @@
 {{! The big featured header on the homepage, with the site logo and description }}
 
 <header class="blog-header">
-    {{#if @blog.logo}}<a class="blog-logo" href="/" style="background-image: url({{@blog.logo}})">{{@blog.title}}</a>{{/if}}
+    {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}" style="background-image: url({{@blog.logo}})">{{@blog.title}}</a>{{/if}}
     <h1 class="blog-title">{{@blog.title}}</h1>
     <h2 class="blog-description">{{@blog.description}}</h2>
     <div class="custom-links">
     	<a href="javascript:linkTo_UnCryptMailto('nbjmup;nbjmAgsbo{jtlvtljfgfs/ef')"><i class="fa fa-envelope"></i></a>&nbsp;&nbsp;
+        <a href="https://github.com/franziskuskiefer" target="_blank"><i class="fa fa-github"></i></a>&nbsp;&nbsp;
         <a href="https://plus.google.com/+FranziskusKiefer" target="_blank"><i class="fa fa-google-plus"></i></a>&nbsp;&nbsp;
         <a href="https://twitter.com/_franziskus_" target="_blank"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;
-        <a href="https://www.linkedin.com/profile/view?id=89648363" target="_blank"><i class="fa fa-linkedin"></i></a>&nbsp;&nbsp;·&nbsp;&nbsp;
-        <a href="/publications/">Publications</a>&nbsp;&nbsp;·&nbsp;&nbsp;
-        <a href="/resume/">Resume</a>
+        <a href="https://www.linkedin.com/profile/view?id=89648363" target="_blank"><i class="fa fa-linkedin"></i></a><br/><br/>
+        <a href="{{@blog.url}}/publications/">Publications</a>&nbsp;&nbsp;<i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;
+        <a href="{{@blog.url}}/resume/">Resume</a>
         <!--&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/travel/">Travel</a>-->
     </div>
     
     <div class="about"></div>
     <script>
-    	$.get("/about/", function(data) {$('.about').html($(data).find('.post-content').html());});
+    	$.get("{{@blog.url}}/about/", function(data) {$('.about').html($(data).find('.post-content').html());});
     </script>
 </header>
 
 {{! The main content area on the homepage }}
 <main class="content" role="main">
-    <a class="subscribe" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i></a>
-<!--    <h5 class="index-headline featured"><span>Featured</span></h5>-->
-
-<!--    <div class="container featured">
-        {{#foreach posts}}
-            {{#if featured}}
-                <article class="{{post_class}}" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-                    <div class="article-item">
-                        <header class="post-header">
-                            <h2 class="post-title" itemprop="name"><a href="{{url}}" itemprop="url">{{{title}}}</a></h2>
-                        </header>
-                        <section class="post-excerpt" itemprop="description">
-                            <p>{{excerpt characters="130"}}&hellip;</p>
-                        </section>
-                        <div class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> <span class="post-tags-set">{{tags prefix="on "}}</span></div>
-                    </div>
-                </article>
-            {{/if}}
-        {{/foreach}}
-    </div>-->
-    
+    <a class="subscribe" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i></a>    
     
     <h5 class="index-headline normal"><span>News & Blog</span></h5>
     
@@ -80,6 +61,6 @@
 <footer class="site-footer">
 	<div class="contact"></div>
     <script>
-    	$.get("/contact/", function(data) {$('.contact').html($(data).find('.post-content').html());});
+    	$.get("{{@blog.url}}/contact/", function(data) {$('.contact').html($(data).find('.post-content').html());});
     </script>
 </footer>

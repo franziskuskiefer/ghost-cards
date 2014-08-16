@@ -54,7 +54,7 @@ jQuery(document).ready(function($) {
 		/* travel image link */
 		$(".post-content.travel figure.image").click(function(){
 			var link = encodeURIComponent($(this).children().eq(1).text());
-			window.location = "/"+link.replace(/%20/g, '-').toLowerCase();
+			window.location = blogUrl+"/"+link.replace(/%20/g, '-').toLowerCase();
 		});
     
         /* adding lightbox pages http://www.lokeshdhakar.com/projects/lightbox2/ */
@@ -72,8 +72,8 @@ jQuery(document).ready(function($) {
         });
     
         /* fix external links */
-        $( 'a[href^="http://"]' ).attr( 'target','_blank' );
-        $( 'a[href^="https://"]' ).attr( 'target','_blank' );
+        $( 'a[href^="http://"]' ).not('a[href*='+location.host+']').attr( 'target','_blank' );
+        $( 'a[href^="https://"]' ).not('a[href*='+location.host+']').attr( 'target','_blank' );
 });
 
 function UnCryptMailto(s){

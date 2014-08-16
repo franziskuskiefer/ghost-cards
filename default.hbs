@@ -68,7 +68,10 @@
     <script src="{{asset "js/readingTime.min.js"}}"></script>
     <script src="{{asset "js/highlight.pack.js"}}"></script>
     <script src="{{asset "js/lightbox.min.js"}}"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        hljs.initHighlightingOnLoad();
+        var blogUrl = "{{@blog.url}}";
+    </script>
     <script src="{{asset "js/custom.js"}}"></script>
 
 </body>

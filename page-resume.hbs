@@ -12,7 +12,7 @@
 
         <div class="noarticleimage">
             <div class="post-meta">
-                {{#if @blog.logo}}<a class="blog-logo" href="/" style="background-image: url({{@blog.logo}})">{{@blog.title}}</a>{{/if}}
+                {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}" style="background-image: url({{@blog.logo}})">{{@blog.title}}</a>{{/if}}
                 <h1 class="post-title">{{{title}}}</h1>
             </div>
         </div>
@@ -30,6 +30,6 @@
 
 <footer class="bottom-closer">
     <div class="inner">
-        <a href="/" class="btn">Back to Overview</a>
+        <a href="{{@blog.url}}" class="btn">Back to Overview</a>
     </div>
 </footer>
