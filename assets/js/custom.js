@@ -72,8 +72,8 @@ jQuery(document).ready(function($) {
         });
     
         /* fix external links */
-        $( 'a[href^="http://"]' ).not('a[href*='+location.host+']').attr( 'target','_blank' );
-        $( 'a[href^="https://"]' ).not('a[href*='+location.host+']').attr( 'target','_blank' );
+        $( 'a[href^="http://"]' ).not('a[href*="'+location.host+'"]').attr( 'target','_blank' );
+        $( 'a[href^="https://"]' ).not('a[href*="'+location.host+'"]').attr( 'target','_blank' );
 });
 
 function UnCryptMailto(s){
